@@ -1,0 +1,80 @@
+
+<header>
+  <div>
+    <span>SpaceX Launch Programs</span>
+  </div>
+</header>
+<main>
+  <div class="filter-container">
+    <section class="card">
+      <h3 class="card-header">Filters</h3>
+      <div>
+        <div class="card-sub-header">
+          <span>Launch Year</span>
+        </div>
+        <div class="option-container">
+          <ng-container *ngFor="let opt of launchYearOptions">
+            <span class="options" (click)="onOptionClick(opt, 'selectedYearOption')" [ngClass]="{'selected': selectedYearOption == opt}">{{opt}}</span>
+          </ng-container>
+        </div>
+      </div>
+      <div>
+        <div class="card-sub-header">
+          <span>Successful Launch</span>
+        </div>
+        <div class="option-container">
+          <ng-container *ngFor="let opt of successfulLaunchOptions">
+            <span class="options" (click)="onOptionClick(opt, 'selectedLaunchOption')" [ngClass]="{'selected': selectedLaunchOption == opt}">{{opt}}</span>
+          </ng-container>
+        </div>
+      </div>
+      <div>
+        <div class="card-sub-header">
+          <span>Successful Landing</span>
+        </div>
+        <div class="option-container">
+          <ng-container *ngFor="let opt of successfulLandingOptions">
+            <span class="options" (click)="onOptionClick(opt, 'selectedLandingOption')" [ngClass]="{'selected': selectedLandingOption == opt}">{{opt}}</span>
+          </ng-container>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="mission-container">
+    <ng-container *ngFor="let mission of missionList">
+      <section class="card">
+        <div class="image-container">
+          <img class="logo-img" [src]="mission.links.mission_patch_small" alt="mission-image">
+        </div>
+        <div class="mission-name">{{mission.mission_name}} #{{mission.flight_number}}</div>
+        <div class="mission-ids">
+          <span class="detail-tag">Mission Ids: </span>
+          <ul>
+            <ng-container *ngFor="let id of mission.mission_id">
+              <li>{{id}}</li>
+              <!-- <li>5002</li> -->
+            </ng-container>
+          </ul>
+        </div>
+        <div class="mission-details">
+          <span class="detail-tag">Launch Year: </span>
+          <span class="detail-value">{{mission.launch_year}}</span>
+        </div>
+        <div class="mission-details">
+          <span class="detail-tag">Successful Launch: </span>
+          <span class="detail-value">{{mission.launch_success}}</span>
+        </div>
+        <div class="mission-details">
+          <span class="detail-tag">Successful Landing: </span>
+          <span class="detail-value">{{mission.launch_success}}</span>
+        </div>
+      </section>
+    </ng-container>
+  </div>
+</main>
+<footer>
+  <div class="footer-content">
+    <span class="footer-title">Developed by:</span>
+    <span>Shubham Singh</span>
+  </div>
+</footer>

@@ -1,0 +1,126 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #EEEEEE;
+    font-family: sans-serif;
+    margin: 10px 15px;
+
+    header {
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    footer {
+        .footer-title {
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    main {
+        .card {
+            background-color: #ffffff;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 10px;
+            max-width: 270px;
+        }
+    }
+
+    .option-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .options {
+        background-color: #73e02e82;
+        padding: 10px 20px;
+        font-weight: 600;
+        border-radius: 5px;
+        margin: 20px 20px 0 30px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #73e02ef2;
+        }
+    }
+
+    .card-header {
+        margin: 0 0 10px 0;
+    }
+
+    .card-sub-header {
+        display: flex;
+        justify-content: center;
+        margin: 15px 55px 0 55px;
+        border-bottom: 1px solid #69696987;
+        font-weight: 600;
+    }
+
+    .logo-img {
+        width: 268px;
+        background-color: #eeeeee;
+    }
+
+    .mission-name {
+        color: #66a3d8;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 10px 0;
+    }
+
+    .detail-tag {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .mission-ids {
+        margin: 5px 0;
+    }
+
+    .mission-details {
+        margin: 5px 0;
+    }
+
+    .detail-value {
+        color: #757575;
+    }
+
+    ul {
+        color: #757575;
+        margin: 0;
+    }
+
+    .options.selected {
+        background-color: #73e02ef2;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    main {
+        display: flex;
+        max-width: 1440px;
+        margin: auto;
+    }
+    
+    .mission-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 20px;
+        width: calc(100% - 285px);
+
+        .card {
+            margin-right: 20px;
+        }
+    }
+
+    .filter-container {
+        width: 285px;
+    }
+}
