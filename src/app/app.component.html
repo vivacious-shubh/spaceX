@@ -66,7 +66,7 @@
         </div>
         <div class="mission-details">
           <span class="detail-tag">Successful Landing: </span>
-          <span class="detail-value">{{mission.launch_success}}</span>
+          <span class="detail-value">{{mission?.rocket?.first_stage?.cores[0]?.land_success}}</span>
         </div>
       </section>
     </ng-container>

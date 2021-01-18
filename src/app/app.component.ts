@@ -27,9 +27,9 @@ export class AppComponent implements OnInit {
     '2020'
   ];
   missionList: any = [];
-  selectedYearOption: string = null;
-  selectedLaunchOption: string = null;
-  selectedLandingOption: string = null;
+  selectedYearOption: string = '';
+  selectedLaunchOption: string = '';
+  selectedLandingOption: string = '';
   successfulLaunchOptions: any = ['True', 'False'];
   successfulLandingOptions: any = ['True', 'False'];
 
@@ -39,9 +39,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     if(sessionStorage) {
-      this.selectedYearOption = JSON.parse(sessionStorage.getItem('selectedYearOption'));
-      this.selectedLaunchOption = JSON.parse(sessionStorage.getItem('selectedLaunchOption'));
-      this.selectedLandingOption = JSON.parse(sessionStorage.getItem('selectedLandingOption')); 
+      this.selectedYearOption = sessionStorage.getItem('selectedYearOption');
+      this.selectedLaunchOption = sessionStorage.getItem('selectedLaunchOption');
+      this.selectedLandingOption = sessionStorage.getItem('selectedLandingOption');
     }
     this.getSpaceXdata();
   }
@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
 
   onOptionClick(value, key) {
     if(this[key] == value) {
-      this[key] = null;
+      this[key] = '';
     } else {
       this[key] = value;
     }
